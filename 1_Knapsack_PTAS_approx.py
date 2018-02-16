@@ -40,9 +40,9 @@ def knapSack_fptas(W, wt, val, n, k):
 
 
 # test
-val = np.array([1, 10, 6])
-wt = np.array([1, 2, 3])
-W = 5
+val = np.array([100, 10000, 6000,900,1200,2300,3400])
+wt = np.array([1, 2, 3,4,5,6,7])
+W = 15
 n = len(val)
 
 
@@ -54,10 +54,10 @@ for i in result:
     print (i)
 
 vo = np.sum(val)
-n_sq = len(val)**len(val)
+n_sq = len(val)*len(val)
 epsilon = 0.1
-approx = vo/(n_sq*(1+(1/epsilon)))
+k = vo/(n_sq*(1+(1/epsilon)))
 
-result = knapSack_fptas(W, wt, val, n,approx)
+result = knapSack_fptas(W, wt, val, n,k)
 for i in result:
     print (i)
